@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@import 'flowbite/src/themes/default';
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@theme {
+	--color-darkBrown: #594d3e;
+	--color-lightBrown: #f2efe9;
+}
+
+* {
+	font-family: 'Manrope', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+}
+@utility container {
+	margin-inline: auto;
+	padding-inline: 5rem;
+}
+@layer base {
+	.customTitle {
+		font-size: 2.5rem;
+		line-height: var(--tw-leading, var(--text-3xl--line-height));
+	}
+	button {
+		font-weight: var(--font-weight-medium);
+		border-radius: calc(infinity * 1px);
+		font-size: var(--text-base);
+		line-height: var(--tw-leading, var(--text-sm--line-height));
+		padding-inline: calc(var(--spacing) * 9);
+		padding-block: calc(var(--spacing) * 4);
+
+		color: var(--color-white);
+		background-color: #594d3e;
+		transition-duration: 150ms;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: #594d3ed1;
+	}
+
+}
