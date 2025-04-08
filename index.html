@@ -4,10 +4,19 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Required Core Stylesheet -->
 		<link
-			href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
 			rel="stylesheet"
+			href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
 		/>
+
+		<!-- Optional Theme Stylesheet -->
+		<link
+			rel="stylesheet"
+			href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
+		/>
+
 		<link href="/src/output.css" rel="stylesheet" />
 
 		<title>Vite + TS</title>
@@ -43,28 +52,59 @@
 			</nav>
 		</header>
 		<main class="container">
-			<section class="grid grid-cols-[1fr_minmax(6rem,_18rem)] gap-5 mb-35.25">
-				<div
-					class="pt-22 pb-16 pl-25 rounded-2xl bg-[url(/image2.png)] bg-repeat-round"
-				>
-					<p class="w-max mb-9 py-2.5 px-5 rounded-full bg-white">
-						Забота, которой можно доверять!
-					</p>
-					<h1 class="max-w-108 mb-5 font-bold text-5xl text-darkBrown">
-						Высшее качество диагностики и лечения
-					</h1>
-					<button class="px-16.5 mb-12">Записаться</button>
-					<div>
-						<p>Отзывы пациентов</p>
-						<div>
-							<img src="Yandex.png" alt="Яндекс" /><img
-								src="reviews.png"
-								alt="отзывы"
-								class="-mt-2"
-							/>
-						</div>
+			<section
+				class="max-w-screen grid grid-cols-[1fr_minmax(6rem,_18rem)] gap-5 mb-35.25"
+			>
+				<!-- Слайдер -->
+
+				<div class="glide max-w-260">
+					<div class="glide__track" data-glide-el="track">
+						<ul class="glide__slides">
+							<li class="glide__slide">
+								<div
+									class="pt-22 pb-16 pl-25 rounded-2xl bg-[url(/image2.png)] bg-repeat-round"
+								>
+									<p class="w-max mb-9 py-2.5 px-5 rounded-full bg-white">
+										Забота, которой можно доверять!
+									</p>
+									<h1 class="max-w-108 mb-5 font-bold text-5xl text-darkBrown">
+										Высшее качество диагностики и лечения
+									</h1>
+									<button class="px-16.5 mb-12">Записаться</button>
+									<div>
+										<p>Отзывы пациентов</p>
+										<div>
+											<img src="Yandex.png" alt="Яндекс" /><img
+												src="reviews.png"
+												alt="отзывы"
+												class="-mt-2"
+											/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="glide__slide">
+								<div
+									class="pt-22 pb-16 pl-25 rounded-2xl bg-[url(/image1.png)] bg-repeat-round"
+								>
+									<p
+										class="w-max mb-9 py-2.5 px-5 text-[1.6875rem] text-darkBrown font-bold rounded-full bg-white"
+									>
+										+7 967 010 30 03
+									</p>
+									<h1 class="max-w-50 mb-5 font-bold text-5xl text-darkBrown">
+										Помощь в шаге от Вас!
+									</h1>
+									<button class="px-16.5 mb-20">Записаться</button>
+									<div>
+										<img src="icon_site.svg" alt="icon_site" />
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
+
 				<div class="grid gap-5">
 					<div
 						class="pt-4.5 pb-7 pl-4 pr-4.5 rounded-2xl text-nowrap cursor-pointer shadow-darkBrown/25 hover:shadow-xl duration-200 bg-[#D9D7CC]"
@@ -111,11 +151,11 @@
 				</div>
 			</section>
 			<section class="grid grid-cols-2 mb-22.25">
-				<div><img src="Frame_3.png" alt="Frame_3"></div>
+				<div><img src="Frame_3.png" alt="Frame_3" /></div>
 				<div>
 					<p class="w-max mb-4 py-2 px-15.5 rounded-full bg-[#F2EFE9]">О нас</p>
 					<div class="grid gap-5.25">
-						<h2 class="max-w-80 font-bold customTitle ">
+						<h2 class="max-w-80 font-bold customTitle">
 							Мы рядом, когда это важно
 						</h2>
 						<p>
@@ -145,7 +185,7 @@
 							оптимальное решение. Независимо от сложности ситуации, мы всегда
 							готовы помочь вам и вашим близким. Ваше здоровье — наша забота!
 						</p>
-						<button class="w-max  py-4.5 px-8 flex flex-nowrap">
+						<button class="w-max py-4.5 px-8 flex flex-nowrap">
 							Получить консультацию
 							<img src="arrow-right.svg" alt="стрелка в право" class="ml-7.5" />
 						</button>
@@ -154,5 +194,12 @@
 			</section>
 		</main>
 	</body>
-	<script type="module" src="/src/scripts/main.ts"></script>
+	<script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+	<script>
+		new Glide('.glide', {
+			autoplay: 5000,
+			animationDuration: 1000,
+			hoverpause: true,
+		}).mount()
+	</script>
 </html>
